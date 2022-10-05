@@ -1,11 +1,152 @@
 HTTP Request,View all orders,View all orders based on specific date,View all orders placed by a specific customer,Accept Order details,Modify Order,Cancel Order
-URL,,,,,,
-METHOD,,,,,,
-"Request Body 		",,,,,,
-"Content Type	",,,,,,
+URL,http://localhost:3002/orders,http://localhost:3002/orders/?orderDate=06-22-2022,,http://localhost:3002/orders,http://localhost:3002/orders/600,http://localhost:3002/orders/600
+METHOD,GET,GET,,POST,PUT,DELETE
+"Request Body 		",,,,"{
+    ""id"": 600,
+    ""orderDate"": ""07-12-2022"",
+    ""items"": [
+        {
+            ""itemName"": ""Berry Blast"",
+            ""price"": 10.72
+        },
+        {
+            ""itemName"": ""Emilgrana & Mushroom Dip"",
+            ""price"": 31.4
+        }
+    ],
+    ""customer"": {
+        ""name"": ""Tom"",
+        ""email"": ""tom@gmail.com"",
+        ""phoneNumber"": ""+11523449876"",
+        ""address"": {
+            ""streetName"": ""Sccot Hosland"",
+            ""streetNo"": ""105"",
+            ""postalCode"": ""85354""
+        }
+    }
+}","{
+    ""id"": 600,
+    ""orderDate"": ""07-12-2022"",
+    ""items"": [
+        {
+            ""itemName"": ""Berry Blast"",
+            ""price"": 10.72
+        },
+        {
+            ""itemName"": ""Emilgrana & Mushroom Dip"",
+            ""price"": 31.4
+        }
+    ],
+    ""customer"": {
+        ""name"": ""Harry"",
+        ""email"": ""harry@gmail.com"",
+        ""phoneNumber"": ""+11523444876"",
+        ""address"": {
+            ""streetName"": ""Sccot Hosland"",
+            ""streetNo"": ""104"",
+            ""postalCode"": ""85354""
+        }
+    }
+}",
+"Content Type	",json,json,,json,json,json
 Body ,,,,,,
 ,,,,,,
-HTTP Response,,,,,,
-Status Code,,,,,,
-Status Message,,,,,,
+HTTP Response,"[
+    {
+        ""id"": 601,
+        ""orderDate"": ""06-22-2022"",
+        ""items"": [
+            {
+                ""itemName"": ""Berry Blast"",
+                ""price"": 1.72
+            },
+            {
+                ""itemName"": ""Emilgrana & Mushroom Dip"",
+                ""price"": 41.4
+            }
+        ],
+        ""customer"": {
+            ""name"": ""Mary"",
+            ""email"": ""mary@gmail.com"",
+            ""phoneNumber"": ""+11524449876"",
+            ""address"": {
+                ""streetName"": ""Scottsdale Kierland"",
+                ""streetNo"": ""100"",
+                ""postalCode"": ""85254""
+            }
+        }
+    }","[
+    {
+        ""id"": 601,
+        ""orderDate"": ""06-22-2022"",
+        ""items"": [
+            {
+                ""itemName"": ""Berry Blast"",
+                ""price"": 1.72
+            },
+            {
+                ""itemName"": ""Emilgrana & Mushroom Dip"",
+                ""price"": 41.4
+            }
+        ],
+        ""customer"": {
+            ""name"": ""Mary"",
+            ""email"": ""mary@gmail.com"",
+            ""phoneNumber"": ""+11524449876"",
+            ""address"": {
+                ""streetName"": ""Scottsdale Kierland"",
+                ""streetNo"": ""100"",
+                ""postalCode"": ""85254""
+            }
+        }
+    }
+]",,"{
+    ""id"": 600,
+    ""orderDate"": ""07-12-2022"",
+    ""items"": [
+        {
+            ""itemName"": ""Berry Blast"",
+            ""price"": 10.72
+        },
+        {
+            ""itemName"": ""Emilgrana & Mushroom Dip"",
+            ""price"": 31.4
+        }
+    ],
+    ""customer"": {
+        ""name"": ""Tom"",
+        ""email"": ""tom@gmail.com"",
+        ""phoneNumber"": ""+11523449876"",
+        ""address"": {
+            ""streetName"": ""Sccot Hosland"",
+            ""streetNo"": ""105"",
+            ""postalCode"": ""85354""
+        }
+    }
+}","{
+    ""id"": 600,
+    ""orderDate"": ""07-12-2022"",
+    ""items"": [
+        {
+            ""itemName"": ""Berry Blast"",
+            ""price"": 10.72
+        },
+        {
+            ""itemName"": ""Emilgrana & Mushroom Dip"",
+            ""price"": 31.4
+        }
+    ],
+    ""customer"": {
+        ""name"": ""Harry"",
+        ""email"": ""harry@gmail.com"",
+        ""phoneNumber"": ""+11523444876"",
+        ""address"": {
+            ""streetName"": ""Sccot Hosland"",
+            ""streetNo"": ""104"",
+            ""postalCode"": ""85354""
+        }
+    }
+}",{}
+Status Code,200,200,,201,200,200
+Status Message,OK,OK,,Created,OK,OK
 Body,,,,,,
