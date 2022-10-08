@@ -1,6 +1,6 @@
 HTTP Request,View all orders,View all orders based on specific date,View all orders placed by a specific customer,Accept Order details,Modify Order,Cancel Order
-URL,http://localhost:3002/orders,http://localhost:3002/orders/?orderDate=06-22-2022,,http://localhost:3002/orders,http://localhost:3002/orders/600,http://localhost:3002/orders/600
-METHOD,GET,GET,,POST,PUT,DELETE
+URL,http://localhost:3002/orders,http://localhost:3002/orders/?orderDate=06-22-2022,http://localhost:3002/orders?customer.name=Mary,http://localhost:3002/orders,http://localhost:3002/orders/600,http://localhost:3002/orders/600
+METHOD,GET,GET,GET,POST,PUT,DELETE
 "Request Body 		",,,,"{
     ""id"": 600,
     ""orderDate"": ""07-12-2022"",
@@ -48,7 +48,7 @@ METHOD,GET,GET,,POST,PUT,DELETE
         }
     }
 }",
-"Content Type	",json,json,,json,json,json
+"Content Type	",json,json,json,json,json,json
 Body ,,,,,,
 ,,,,,,
 HTTP Response,"[
@@ -100,7 +100,28 @@ HTTP Response,"[
             }
         }
     }
-]",,"{
+]","""""id"""": 601,
+        """"orderDate"""": """"06-22-2022"""",
+        """"items"""": [
+            {
+                """"itemName"""": """"Berry Blast"""",
+                """"price"""": 1.72
+            },
+            {
+                """"itemName"""": """"Emilgrana & Mushroom Dip"""",
+                """"price"""": 41.4
+            }
+        ],
+        """"customer"""": {
+            """"name"""": """"Mary"""",
+            """"email"""": """"mary@gmail.com"""",
+            """"phoneNumber"""": """"+11524449876"""",
+            """"address"""": {
+                """"streetName"""": """"Scottsdale Kierland"""",
+                """"streetNo"""": """"100"""",
+                """"postalCode"""": """"85254""""
+            }
+        }","{
     ""id"": 600,
     ""orderDate"": ""07-12-2022"",
     ""items"": [
@@ -147,6 +168,6 @@ HTTP Response,"[
         }
     }
 }",{}
-Status Code,200,200,,201,200,200
-Status Message,OK,OK,,Created,OK,OK
+Status Code,200,200,200,201,200,200
+Status Message,OK,OK,ok,Created,OK,OK
 Body,,,,,,
